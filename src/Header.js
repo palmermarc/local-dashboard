@@ -1,16 +1,28 @@
 // header.js
 
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.png';
 
-class Header extends Component {
-  render() {
+const Image = (props) => {
+	return(
+		<img src={props.src} alt={props.alt} title={props.title} />
+	)
+}
+
+const Header = (props) => {
     return (
     	<header>
-    		<img src={logo} className="App-logo" alt="logo" />
+    		<nav>
+    			<Image src={logo} />
+    			<ul>
+    				<li><a href="#">Create Install</a></li>
+						<li><a href="#">Manage Domains</a></li>
+						<li><a href="#">Update Websites</a></li>
+						<li><a href="#">Update Plugin(s)</a></li>
+    			</ul>
+    		</nav>
     	</header>
     );
-  }
 }
 
 export default Header;
